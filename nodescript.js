@@ -1,5 +1,6 @@
 var http = require('http');
- var dt = require('./mymodule');
+var dt = require('./mymodule');
+var iu = require('./insertuser');
 var url = require('url');
 var fs = require('fs');
 const { Client } = require('pg');
@@ -30,7 +31,7 @@ client.query('SELECT * FROM users;', (err, ress) => {
     res.write(JSON.stringify(row));
 
   }
-  res.write("pofpofpof");
+  res.write(iu.insertUser());
   client.end();
   return   res.end('Hello World!'+dt.myDateTime());
 });
