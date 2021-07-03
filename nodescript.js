@@ -23,12 +23,10 @@ const client = new Client({
 client.connect();
 client.query('SELECT * FROM users;', (err, res) => {
   if (err) throw err;
-  res.writeHead(200, {'Content-Type': 'text/html'});
   for (let row of res.rows) {
-    res.write(JSON.stringify(row));
+    console.log(JSON.stringify(row));
   }
   client.end();
-  res.end();
 });
 
 
