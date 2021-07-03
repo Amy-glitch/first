@@ -17,7 +17,11 @@
   "bugs": {
     "url": "https://github.com/Amy-glitch/first/issues"
   },
-  "homepage": "https://github.com/Amy-glitch/first#readme"
+  "homepage": "https://github.com/Amy-glitch/first#readme",
+
+  "engines": {
+    "node": "16.4.1"
+  }
 
   
 }
