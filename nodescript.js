@@ -2,7 +2,7 @@ var http = require('http');
 // var dt = require('./mymodule');
 var url = require('url');
 var fs = require('fs');
-
+const { Client } = require('pg');
 
 http.createServer(function (req, res) {
   // res.writeHead(200, {'Content-Type': 'text/html'}); //http header
@@ -13,6 +13,17 @@ http.createServer(function (req, res) {
 //   var txt = q.year + " " + q.month;
 //   res.write(txt);
 //   res.end('Hello World!'+dt.myDateTime());
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+client.connect();
+
+
 
 fs.readFile('mytextfile.txt', function(err, data) {
     res.writeHead(200, {'Content-Type': 'text/html'});
@@ -25,3 +36,7 @@ fs.readFile('mytextfile.txt', function(err, data) {
 
 
 }).listen(process.env.PORT || 8080);
+
+
+
+

@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node nodescript.js"
-
   },
   "repository": {
     "type": "git",
@@ -18,10 +17,10 @@
     "url": "https://github.com/Amy-glitch/first/issues"
   },
   "homepage": "https://github.com/Amy-glitch/first#readme",
-
   "engines": {
     "node": "16.4.1"
+  },
+  "dependencies": {
+    "pg": "^8.6.0"
   }
-
-  
 }
