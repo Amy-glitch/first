@@ -21,9 +21,9 @@ const client = new Client({
   }
 });
 client.connect();
-client.query('SELECT * FROM users;', (err, res) => {
+client.query('SELECT * FROM users;', (err, ress) => {
   if (err) throw err;
-  for (let row of res.rows) {
+  for (let row of ress.rows) {
     console.log(JSON.stringify(row));
     res.write(JSON.stringify(row));
   }
