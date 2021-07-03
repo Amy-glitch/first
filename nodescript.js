@@ -31,13 +31,8 @@ client.query('SELECT * FROM users;', (err, ress) => {
     res.write(JSON.stringify(row));
 
   }
- // iu.insertUser(client);
- client.query("INSERT INTO users(u_id,username,pwd) VALUES(2,'pofpof','pof1');", (err, ress) => {
-   console.log(err);
-  console.log(ress);
-  client.end();
+  iu.insertUser(client);
 
-});
 
   return   res.end('Hello World!'+dt.myDateTime());
 });
