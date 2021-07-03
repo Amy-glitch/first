@@ -31,7 +31,11 @@ client.query('SELECT * FROM users;', (err, ress) => {
     res.write(JSON.stringify(row));
 
   }
-  iu.insertUser(client);
+ // iu.insertUser(client);
+ client.query('INSERT INTO users(u_id,username,pwd) VALUES(2,"pofpof","pof1");', (err, ress) => {
+  client.end();
+
+});
 
   return   res.end('Hello World!'+dt.myDateTime());
 });
