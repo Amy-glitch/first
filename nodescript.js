@@ -12,7 +12,7 @@ http.createServer(function (req, res) {
 //   var q = url.parse(req.url, true).query;
 //   var txt = q.year + " " + q.month;
 //   res.write(txt);
-//   res.end('Hello World!'+dt.myDateTime());
+
 res.writeHead(200, {'Content-Type': 'text/html'});
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
@@ -32,7 +32,7 @@ client.query('SELECT * FROM users;', (err, ress) => {
   }
   res.write("pofpofpof");
   client.end();
-  return res.end();
+  return   res.end('Hello World!'+dt.myDateTime());
 });
 
 
