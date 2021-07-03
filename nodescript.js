@@ -30,7 +30,7 @@ client.query('SELECT * FROM users;', (err, ress) => {
     res.write(JSON.stringify(row));
 
   }
-  // res.write(str);
+  res.write("pofpofpof");
   client.end();
   return res.end();
 });
