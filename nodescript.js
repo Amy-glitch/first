@@ -21,16 +21,19 @@ const client = new Client({
   }
 });
 client.connect();
+
+let str='yeet'
 client.query('SELECT * FROM users;', (err, ress) => {
   if (err) throw err;
   for (let row of ress.rows) {
     console.log(JSON.stringify(row));
-    res.write(JSON.stringify(row));
+    str+=JSON.stringify(row);
+
   }
   client.end();
 });
 
-
+res.write(str);
 
 fs.readFile('mytextfile.txt', function(err, data) {
     
