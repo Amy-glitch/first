@@ -23,19 +23,21 @@ const client = new Client({
 client.connect();
 client.query('SELECT * FROM users;', (err, res) => {
   if (err) throw err;
+  res.writeHead(200, {'Content-Type': 'text/html'});
   for (let row of res.rows) {
-    console.log(JSON.stringify(row));
+    res.write(JSON.stringify(row));
   }
   client.end();
+  res.end();
 });
 
 
 
-fs.readFile('mytextfile.txt', function(err, data) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(data);
-    return res.end();
-  });
+// fs.readFile('mytextfile.txt', function(err, data) {
+//     res.writeHead(200, {'Content-Type': 'text/html'});
+//     res.write(data);
+//     return res.end();
+//   });
 
 
 
