@@ -31,8 +31,8 @@ client.query('SELECT * FROM users;', (err, ress) => {
     res.write(JSON.stringify(row));
 
   }
-  res.write(iu.insertUser());
-  client.end();
+  iu.insertUser(client);
+
   return   res.end('Hello World!'+dt.myDateTime());
 });
 

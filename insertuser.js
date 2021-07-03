@@ -6,7 +6,7 @@ exports.insertUser = function (client) {
         console.log(ress);
 
     });
-    
+    client.end();
     
     
     
