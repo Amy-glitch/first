@@ -22,15 +22,15 @@ const client = new Client({
 });
 client.connect();
 
-let str='yeet'
+// let str='yeet'
 client.query('SELECT * FROM users;', (err, ress) => {
   if (err) throw err;
   for (let row of ress.rows) {
     console.log(JSON.stringify(row));
-    str+=JSON.stringify(row);
+    res.write(JSON.stringify(row));
 
   }
-  res.write(str);
+  // res.write(str);
   client.end();
   return res.end();
 });
