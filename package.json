@@ -4,7 +4,9 @@
   "description": "",
   "main": "nodescript.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node nodescript.js"
+
   },
   "repository": {
     "type": "git",
@@ -16,4 +18,6 @@
     "url": "https://github.com/Amy-glitch/first/issues"
   },
   "homepage": "https://github.com/Amy-glitch/first#readme"
+
+  
 }
