@@ -13,7 +13,7 @@ http.createServer(function (req, res) {
 //   var txt = q.year + " " + q.month;
 //   res.write(txt);
 //   res.end('Hello World!'+dt.myDateTime());
-
+res.writeHead(200, {'Content-Type': 'text/html'});
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -25,17 +25,18 @@ client.query('SELECT * FROM users;', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
+    res.write(JSON.stringify(row));
   }
   client.end();
 });
 
 
 
-// fs.readFile('mytextfile.txt', function(err, data) {
-//     res.writeHead(200, {'Content-Type': 'text/html'});
-//     res.write(data);
-//     return res.end();
-//   });
+fs.readFile('mytextfile.txt', function(err, data) {
+    
+    res.write(data);
+    return res.end();
+  });
 
 
 
