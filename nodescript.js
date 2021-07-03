@@ -32,7 +32,7 @@ client.query('SELECT * FROM users;', (err, ress) => {
 
   }
  // iu.insertUser(client);
- client.query('INSERT INTO users(u_id,username,pwd) VALUES(2,"pofpof","pof1");', (err, ress) => {
+ client.query("INSERT INTO users(u_id,username,pwd) VALUES(2,'pofpof','pof1');", (err, ress) => {
    console.log(err);
   console.log(ress);
   client.end();
