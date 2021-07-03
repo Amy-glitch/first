@@ -7,6 +7,7 @@ var http = require('http');
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'}); //http header
   res.write("heyo");
+  res.end("yeet");
 //   res.write(req.url); //get request url
 //   var q = url.parse(req.url, true).query;
 //   var txt = q.year + " " + q.month;
