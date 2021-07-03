@@ -30,16 +30,18 @@ client.query('SELECT * FROM users;', (err, ress) => {
     str+=JSON.stringify(row);
 
   }
+  res.write(str);
   client.end();
+  return res.end();
 });
 
-res.write(str);
 
-fs.readFile('mytextfile.txt', function(err, data) {
+
+// fs.readFile('mytextfile.txt', function(err, data) {
     
-    res.write(data);
-    return res.end();
-  });
+//     res.write(data);
+//     return res.end();
+//   });
 
 
 
